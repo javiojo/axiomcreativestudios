@@ -27,7 +27,7 @@ p{margin:0 0 1rem}
 .nav{align-items:center}
 .nav a.nav-es{background:var(--teal);color:#fff;padding:.4rem .85rem;border-radius:999px;border-bottom:0;white-space:nowrap}
 .nav a.nav-es:hover{color:#fff;filter:brightness(1.08)}
-@media (max-width:480px){.nav{gap:1rem;font-size:.8rem}.nav a.nav-es{padding:.35rem .7rem}}
+@media (max-width:480px){.nav{flex-wrap:wrap;gap:.65rem 1rem;font-size:.8rem}.nav a.nav-es{padding:.35rem .7rem}}
 .hero-inner{padding-top:clamp(1.5rem,5vw,3.5rem);position:relative;z-index:1}
 .hero-logo{width:min(100%,26rem);margin-bottom:clamp(2rem,6vw,3.5rem)}
 .lead{font-size:clamp(1rem,2.6vw,1.2rem);max-width:40rem;color:var(--muted);margin:1.25rem 0 2rem}
@@ -113,3 +113,10 @@ textarea{resize:vertical;min-height:7rem}
 }
 
 .es-note{color:var(--teal);font-weight:700}
+
+/* Language switch */
+.lang-switch{display:inline-flex;align-items:center;gap:.35rem;font-weight:700;letter-spacing:.04em}
+.nav .lang-switch a{padding:.2rem .15rem;color:var(--muted)}
+.nav .lang-switch a[aria-current="page"]{color:var(--teal-text);border-bottom-color:var(--teal)}
+.nav .lang-switch a:hover{color:var(--teal-text);border-bottom-color:var(--teal)}
+.lang-sep{color:var(--gray);font-weight:500;user-select:none}

@@ -7,6 +7,9 @@
 <meta name="description" content="Axiom Creative Studios is a bilingual (EN/ES) agency offering AI Integration &amp; Automation, plus websites, custom web apps, SEO, Google AdWords, advertising, media planning, marketing consulting, branding, social media, printing and business email.">
 <meta name="theme-color" content="#F5F5F3">
 <link rel="canonical" href="https://axiomcreativestudios.com/">
+<link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/">
+<link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -14,11 +17,13 @@
 <meta property="og:description" content="Creating Impressive Concepts; Always Getting Results. AI Integration &amp; Automation and marketing for local businesses. Bilingual EN/ES.">
 <meta property="og:url" content="https://axiomcreativestudios.com/">
 <meta property="og:image" content="https://axiomcreativestudios.com/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Axiom Creative Studios","url":"https://axiomcreativestudios.com/","email":"axiom@ojomg.com","telephone":"+1-321-446-2526","description":"Bilingual (English/Spanish) agency offering AI Integration & Automation and marketing services.","knowsLanguage":["en","es"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Axiom Creative Studios","url":"https://axiomcreativestudios.com/","email":"axiom@ojomg.com","telephone":"+1-321-446-2526","description":"Bilingual (English/Spanish) agency offering AI Integration & Automation and marketing services.","knowsLanguage":["en","es"],"inLanguage":"en","availableLanguage":["English","Spanish"]}
 </script>
 </head>
 <body>
@@ -29,7 +34,12 @@
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a class="nav-es" href="#contact" lang="es">Hablamos Espa&ntilde;ol</a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <a href="/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/es/" lang="es" hreflang="es">ES</a>
+    </div>
+    <a class="nav-es" href="/es/" lang="es">Hablamos Espa&ntilde;ol</a>
   </nav>
   <div class="hero-visual hero-visual--bleed" aria-hidden="true">
     <picture>
