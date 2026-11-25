@@ -110,8 +110,10 @@
       </ul>
       <p class="es-note" lang="es">Hablamos espa&ntilde;ol. Si prefiere conversar en espa&ntilde;ol, con gusto le atendemos.</p>
     </div>
-    <!-- Replace YOUR_FORM_ID with a real Formspree (or similar) endpoint before launch. Until then the form opens the visitor's email app. -->
-    <form id="form" class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form id="form" class="form" action="https://formsubmit.co/ajax/axiom@ojomg.com" method="POST">
+      <input type="hidden" name="_subject" value="New inquiry from axiomcreativestudios.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
       <label>Name<input name="name" autocomplete="name" required></label>
       <label>Email<input type="email" name="email" autocomplete="email" required></label>
       <label>Phone <small>(optional)</small><input type="tel" name="phone" autocomplete="tel"></label>
@@ -133,7 +135,7 @@
         </select>
       </label>
       <label>Message<textarea name="message" rows="4" required></textarea></label>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
       <button class="btn btn-primary" type="submit">Send message</button>
       <p class="status" id="status" role="status" aria-live="polite"></p>
     </form>
@@ -151,19 +153,29 @@
 (function(){
   var f=document.getElementById('form'),s=document.getElementById('status');
   f.addEventListener('submit',function(e){
-    if(f.action.indexOf('YOUR_FORM_ID')===-1){
-      e.preventDefault();
-      var b=f.querySelector('button');b.disabled=true;s.textContent='Sending...';
-      fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}})
-        .then(function(r){if(!r.ok)throw 0;f.reset();s.textContent='Thank you! We will be in touch soon.';})
-        .catch(function(){s.textContent='Something went wrong. Please email axiom@ojomg.com.';})
-        .then(function(){b.disabled=false;});
-      return;
-    }
     e.preventDefault();
-    var d=new FormData(f),body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nPhone: '+(d.get('phone')||'')+'\nInterested in: '+d.get('service')+'\n\n'+d.get('message');
-    s.textContent='Form not connected yet (preview). Opening your email app...';
-    location.href='mailto:axiom@ojomg.com?subject='+encodeURIComponent('Website inquiry from '+d.get('name'))+'&body='+encodeURIComponent(body);
+    var b=f.querySelector('button[type="submit"]');
+    b.disabled=true;
+    s.textContent='Sending...';
+    var d=new FormData(f);
+    if(d.get('email')) d.set('_replyto',d.get('email'));
+    fetch(f.action,{method:'POST',body:d,headers:{Accept:'application/json'}})
+      .then(function(r){
+        return r.json().then(function(data){
+          if(!r.ok||data.success===false||data.success==='false') throw data;
+          return data;
+        },function(){if(!r.ok)throw 0;});
+      })
+      .then(function(){
+        f.reset();
+        s.textContent='Thanks! We\u2019ll get back to you soon.';
+      })
+      .catch(function(){
+        var body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nPhone: '+(d.get('phone')||'')+'\nInterested in: '+d.get('service')+'\n\n'+d.get('message');
+        s.textContent='Something went wrong. Opening your email app so you can send the message instead...';
+        location.href='mailto:axiom@ojomg.com?subject='+encodeURIComponent('Website inquiry from '+d.get('name'))+'&body='+encodeURIComponent(body);
+      })
+      .then(function(){b.disabled=false;});
   });
 })();
 </script>
