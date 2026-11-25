@@ -86,3 +86,24 @@ textarea{resize:vertical;min-height:7rem}
   .nav{padding-inline:max(1.25rem,calc((100vw - 68rem)/2))}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* Hero visual: full-bleed data streams, fades into the page. Below the copy on small screens so text is never covered. */
+.hero--bleed{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr;grid-template-areas:"nav" "copy" "visual"}
+.hero--bleed>.nav{grid-area:nav}
+.hero--bleed>.hero-inner{grid-area:copy}
+.hero--bleed>.hero-visual--bleed{grid-area:visual}
+.hero-copy{min-width:0}
+.hero-visual--bleed{width:min(100% - 2.5rem,40rem);justify-self:center;margin:.75rem auto 0;pointer-events:none}
+.hero-visual--bleed picture,.hero-visual--bleed img{display:block;width:100%;height:auto;border:0;background:transparent}
+.hero-inner--bleed{padding-top:clamp(1.25rem,3vw,2.5rem)}
+@media (min-width:62rem){
+  .hero--bleed{grid-template-areas:"nav" "copy"}
+  .hero--bleed::after{display:none}
+  .hero-visual--bleed{position:absolute;right:0;top:2.75rem;bottom:0;width:54%;max-width:none;margin:0;justify-self:auto;z-index:0}
+  .hero-visual--bleed picture{height:100%}
+  .hero-visual--bleed img{height:100%;object-fit:cover;object-position:right center;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 26%,#000 100%);mask-image:linear-gradient(to right,transparent 0%,#000 26%,#000 100%)}
+  .hero--bleed .nav,.hero--bleed .hero-inner{position:relative;z-index:1}
+  .hero-inner--bleed .hero-copy{max-width:34rem}
+  .hero-inner--bleed .hero-logo{width:min(100%,24rem);margin-bottom:clamp(1.5rem,4vw,2.5rem)}
+  .hero-inner--bleed h1{max-width:18ch}
+}

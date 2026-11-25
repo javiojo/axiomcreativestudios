@@ -24,13 +24,20 @@
 <body>
 <a class="skip" href="#services">Skip to content</a>
 
-<header class="hero" id="top">
+<header class="hero hero--bleed" id="top">
   <nav class="nav" aria-label="Main">
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="wrap hero-inner">
+  <div class="hero-visual hero-visual--bleed" aria-hidden="true">
+    <picture>
+      <source type="image/webp" srcset="assets/hero-data-streams.webp">
+      <img src="assets/hero-data-streams.png" width="1600" height="1000" alt="">
+    </picture>
+  </div>
+  <div class="wrap hero-inner hero-inner--bleed">
+    <div class="hero-copy">
     <img class="hero-logo" src="assets/logo.webp" width="1200" height="341" alt="Axiom Creative Studios">
     <h1>Creating Impressive Concepts; Always Getting&nbsp;Results.</h1>
     <p class="lead">We help local businesses use AI and automation to save time and grow, backed by the websites, branding and marketing to put them to work.</p>
@@ -38,6 +45,7 @@
       <a class="btn btn-primary" href="#contact">Let&rsquo;s talk</a>
       <a class="btn-link" href="#services">See what we do <span aria-hidden="true">&rarr;</span></a>
     </p>
+    </div>
   </div>
 </header>
 
