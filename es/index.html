@@ -162,6 +162,10 @@
         </select>
       </label>
       <label>Mensaje<textarea name="message" rows="4" required></textarea></label>
+      <label>
+        <span id="verify-label">Verificación: ¿Cuánto es 3 + 4?</span>
+        <input type="text" name="verify" id="verify" inputmode="numeric" autocomplete="off" required>
+      </label>
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
       <button class="btn btn-primary" type="submit">Enviar mensaje</button>
       <p class="status" id="status" role="status" aria-live="polite"></p>
@@ -179,12 +183,54 @@
 <script>
 (function(){
   var f=document.getElementById('form'),s=document.getElementById('status');
+  var vA=3,vB=4,formReadyAt=Date.now()+3000;
+  var thanks='¡Gracias! Le responderemos pronto.';
+  var verifyErr='Esa respuesta no parece correcta. Inténtelo de nuevo.';
+  function updateVerifyLabel(){
+    var el=document.getElementById('verify-label');
+    if(el) el.textContent='Verificación: ¿Cuánto es '+vA+' + '+vB+'?';
+  }
+  function newVerify(){
+    vA=1+Math.floor(Math.random()*9);
+    vB=1+Math.floor(Math.random()*9);
+    updateVerifyLabel();
+    var input=document.getElementById('verify');
+    if(input) input.value='';
+  }
+  function looksLikeSpam(text){
+    text=String(text||'');
+    var links=text.match(/https?:\/\/|www\./gi);
+    if(links&&links.length>2) return true;
+    if(/[\u0400-\u04FF]/.test(text)) return true;
+    if(/[\u3040-\u30FF\u3400-\u9FFF\uAC00-\uD7AF]/.test(text)) return true;
+    return false;
+  }
+  newVerify();
+  f.addEventListener('focusin',function(){
+    formReadyAt=Math.max(formReadyAt,Date.now()+3000);
+  },{once:true});
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var b=f.querySelector('button[type="submit"]');
+    var d=new FormData(f);
+    var honey=String(d.get('_honey')||'').trim();
+    var blob=[d.get('name')||'',d.get('message')||'',d.get('phone')||''].join('\n');
+    if(honey||Date.now()<formReadyAt||looksLikeSpam(blob)){
+      f.reset();
+      newVerify();
+      s.textContent=thanks;
+      return;
+    }
+    var guess=parseInt(String(d.get('verify')||'').replace(/\s+/g,''),10);
+    if(guess!==vA+vB){
+      s.textContent=verifyErr;
+      var vi=document.getElementById('verify');
+      if(vi) vi.focus();
+      return;
+    }
     b.disabled=true;
     s.textContent='Enviando...';
-    var d=new FormData(f);
+    d.delete('verify');
     if(d.get('email')) d.set('_replyto',d.get('email'));
     fetch(f.action,{method:'POST',body:d,headers:{Accept:'application/json'}})
       .then(function(r){
@@ -196,7 +242,8 @@
       })
       .then(function(){
         f.reset();
-        s.textContent='¡Gracias! Le responderemos pronto.';
+        newVerify();
+        s.textContent=thanks;
       })
       .catch(function(){
         var body='Nombre: '+d.get('name')+'\nEmail: '+d.get('email')+'\nTeléfono: '+(d.get('phone')||'')+'\nMe interesa: '+d.get('service')+'\n\n'+d.get('message');
