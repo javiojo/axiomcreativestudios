@@ -81,6 +81,7 @@ textarea{resize:vertical;min-height:7rem}
 /* Footer */
 .footer{background:var(--off);color:var(--muted);border-top:1px solid #DADAD6;padding:1.5rem 0;font-size:.85rem}
 .footer p{margin:0}
+.footer .service-area{margin-top:.55rem;max-width:46rem;line-height:1.5}
 
 @media (min-width:40rem){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:48rem){.feature{grid-template-columns:1.4fr 1fr;gap:2rem 3rem}.feature .btn{grid-column:1/-1}}
