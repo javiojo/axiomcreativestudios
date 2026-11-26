@@ -154,3 +154,5 @@ textarea{resize:vertical;min-height:7rem}
 .steps{margin:0 0 1rem;padding-left:1.4rem;display:grid;gap:.75rem}
 .steps li::marker{color:var(--teal-text);font-weight:800}
 .page-section a:not(.btn){color:var(--teal-text)}
+#services-h{max-width:none;white-space:nowrap;font-size:clamp(1.4rem,3.1vw,2.25rem)}
+@media (max-width:760px){#services-h{white-space:normal}}
