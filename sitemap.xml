@@ -15,4 +15,74 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/"/>
   </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/web-design/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/diseno-web/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/web-design/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/es/diseno-web/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/diseno-web/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/web-design/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/seo/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/seo/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/es/seo/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/seo/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/ai-agents/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/ai-agents/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/ai-agents/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/ai-agents/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/es/ai-agents/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/ai-agents/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/ai-agents/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/ai-agents/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/branding/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/branding/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/branding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/branding/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/es/branding/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/branding/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/branding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/branding/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/privacy/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/privacy/"/>
+  </url>
+  <url>
+    <loc>https://axiomcreativestudios.com/es/privacidad/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axiomcreativestudios.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://axiomcreativestudios.com/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://axiomcreativestudios.com/privacy/"/>
+  </url>
 </urlset>
